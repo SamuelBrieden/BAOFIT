@@ -145,7 +145,7 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
    i0=0;i2=0;i4=0;
    for(i=0;i<N;i++)
    {
-     fscanf(f,"%lf %lf %lf %lf %lf %*d %lf\n",&kav,&k,&p0,&p2,&p4,&Pnoise);
+     fscanf(f,"%lf %lf %lf %*f %lf %*f %lf %*d %lf\n",&kav,&k,&p0,&p2,&p4,&Pnoise);
    
         if(k>kminP0 && k<kmaxP0)
         {
@@ -574,7 +574,7 @@ if(iteration==2){kminP0=kminP0rsd;kminP2=kminP2rsd;kminP4=kminP4rsd;kmaxP0=kmaxP
 
               for(i=0;i<Nlines;i++)
               {
-                  fscanf(f,"%*f %lf %lf %lf %lf %*d %*f\n",&k,&p0,&p2,&p4);
+                  fscanf(f,"%*f %lf %lf %*f %lf %*f %lf %*d %*f\n",&k,&p0,&p2,&p4);
 
 
                   if(k>kminP0 && k<kmaxP0)

@@ -21,7 +21,7 @@
 #Path to mocks2BAO/cov2:  /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_
 #Path to mocks1FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C_
 #Path to mocks2FS:  /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_
-#number of 0001izations: 1000
+#number of Realizations: 1000
 #Path to mask1 (none if no mask): none
 #Path to mask2 (none if no mask): none
 #Renormalize window (yes/no): no
@@ -67,7 +67,7 @@
 #Number of threads: 6
 #Use proposal covariance (yes/no): yes
 #Path to proposal covariance: /home/DATA/sbrieden/baofit_output/patchy_mocks/prerecon/original/aniso/P02/mcmcBAOANISO_output_CMASS_V6C_0001.txt
-#Maximum number of mcmic accepted steps: 1080000
+#Maximum number of mcmc accepted steps: 1080000
 
 #For BAO anaylytical fit
 #Interval for alpha: 0.005

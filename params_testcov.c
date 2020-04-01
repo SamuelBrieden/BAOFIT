@@ -21,7 +21,7 @@
 #Path to mocks2BAO/cov2:  /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C.cov
 #Path to mocks1FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C.cov
 #Path to mocks2FS:  /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C.cov
-#number of 0001izations: 1000
+#number of Realizations: 1000
 #Path to mask1 (none if no mask): none
 #Path to mask2 (none if no mask): none
 #Renormalize window (yes/no): no

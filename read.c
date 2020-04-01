@@ -35,8 +35,8 @@ int Neff,N,i;
 double k;
 double k1,k2,k3;
 FILE *f;
-N=countlines(path)-27;
-//N=countlines(path);
+//N=countlines(path)-27;
+N=countlines(path);
 f=fopen(path,"r");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
@@ -107,8 +107,8 @@ int i0,i2,i4;
 FILE *f;
 double Pnoise,sumw,I22;
 double k,p0,p2,p4,kav;
-N=countlines(path)-27;
-//N=countlines(path);
+//N=countlines(path)-27;
+N=countlines(path);
 f=fopen(path,"r");
 
 fscanf(f,"%*s %*s %*s\n");
@@ -502,17 +502,17 @@ for(iteration=iteration_ini;iteration<=iteration_fin;iteration++){
   
            Nlines=0;
 if(iteration==1){
-           if(modebao==1){Nlines=countlines(full_path_bao)-27;}//if(j==1508){printf("1: %d\n",Nlines);Nlines=0;}
-           if(modebao==2){Nlines=countlines(full_path2_bao)-27;}//if(j==1508){printf("2: %d\n",Nlines);Nlines=0;}
-           if(modebao==3){Nlines=countlines(full_path3_bao)-27;}//if(j==1508){printf("3: %d\n",Nlines);Nlines=0;}
-           if(modebao==4){Nlines=countlines(full_path4_bao)-27;}//if(j==1508){printf("4: %d\n",Nlines);Nlines=0;}
+           if(modebao==1){Nlines=countlines(full_path_bao);}//if(j==1508){printf("1: %d\n",Nlines);Nlines=0;}
+           if(modebao==2){Nlines=countlines(full_path2_bao);}//if(j==1508){printf("2: %d\n",Nlines);Nlines=0;}
+           if(modebao==3){Nlines=countlines(full_path3_bao);}//if(j==1508){printf("3: %d\n",Nlines);Nlines=0;}
+           if(modebao==4){Nlines=countlines(full_path4_bao);}//if(j==1508){printf("4: %d\n",Nlines);Nlines=0;}
 }
 
 if(iteration==2){
-           if(modersd==1){Nlines=countlines(full_path_rsd)-27;}
-           if(modersd==2){Nlines=countlines(full_path2_rsd)-27;}
-           if(modersd==3){Nlines=countlines(full_path3_rsd)-27;}
-           if(modersd==4){Nlines=countlines(full_path4_rsd)-27;}}
+           if(modersd==1){Nlines=countlines(full_path_rsd);}
+           if(modersd==2){Nlines=countlines(full_path2_rsd);}
+           if(modersd==3){Nlines=countlines(full_path3_rsd);}
+           if(modersd==4){Nlines=countlines(full_path4_rsd);}}
 
 //printf("%d %d (%d)\n",j,Nlines,modersd);
         

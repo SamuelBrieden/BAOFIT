@@ -267,7 +267,7 @@ printf("%lf\n",Variance[j+i*Ncov]);
 
 
 //write somewhere the covariance used
-/*
+
 for(j=0;j<Ncov;j++)
 {
 for(i=0;i<Ncov;i++)
@@ -276,7 +276,7 @@ if(i!=Ncov-1){printf("%lf\t",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance
 else{printf("%lf\n",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance[j+j*Ncov]));}
 }
 }
-*/
+
 //exit(0);
        //invert covariance
 
@@ -1042,7 +1042,7 @@ Variance[j+i*Ncov]=Variance[j+i*Ncov]+ielement*jelement/(Ncounter*1.-1.);
 }
 
 //write somewhere the covariance used
-/*
+
 for(j=0;j<Ncov;j++)
 {
 for(i=0;i<Ncov;i++)
@@ -1051,7 +1051,7 @@ if(i!=Ncov-1){printf("%lf\t",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance
 else{printf("%lf\n",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance[j+j*Ncov]));}
 }
 }
-*/
+
 //exit(0);
        //invert covariance
 

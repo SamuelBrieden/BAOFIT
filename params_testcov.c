@@ -64,7 +64,7 @@
 #Type of fit (mcmc/analytic): mcmc
 
 #For mcmc fit
-#Number of threads: 6
+#Number of threads: 1
 #Use proposal covariance (yes/no): yes
 #Path to proposal covariance: /home/DATA/sbrieden/baofit_output/patchy_mocks/prerecon/original/aniso/P02/mcmcBAOANISO_output_CMASS_V6C_0001.txt
 #Maximum number of mcmic accepted steps: 1080000

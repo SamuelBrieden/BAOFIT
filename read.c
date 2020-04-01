@@ -66,6 +66,8 @@ fscanf(f,"%*s %*s %*s %*s %*d\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
+fscanf(f,"%*s %*s %*s\n");
+fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s %*s %*s %*s %*s %*s %*s\n");
 Neff=0;
 for(i=0;i<N;i++)
@@ -136,6 +138,8 @@ fscanf(f,"%*s %*s %*s %*s %*d\n");
 fscanf(f,"%*s %*s %*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s %*s %*d\n");
+fscanf(f,"%*s %*s %*s\n");
+fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");

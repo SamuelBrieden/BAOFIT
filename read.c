@@ -72,7 +72,7 @@ for(i=0;i<N;i++)
 {
 
 if(mode==0){
-fscanf(f,"%*f %lf %*f %*f %*f %*d %*f\n",&k);
+fscanf(f,"%*f %lf %*f %*f %*f %*f %*f %*d %*f\n",&k);
 if(k>kmin && k<kmax){Neff++;}
 }
 

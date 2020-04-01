@@ -229,9 +229,102 @@ f=fopen(path,"r");
    fclose(f);
 
 }
+/* This function is called from main, if the *path_to_mocks is given as a .cov file, which contains a precomputed covariance matrix.
+ * In contrast to the function "get_cov_from_mocks", we do not need to distinguish between the cases bao/rsd, so we are handling this
+ * by taking inside the function "path_to_cov" as the "path_to_mocks_bao" corresponding to the first line in the .param file
+ */
+//void get_cov_from_mocks(char *path_to_mocks, char *path_to_mocks_bis, double cov[], int Ncov,int Nrealizations, int NeffP0, int NeffP2, int NeffP4, int NeffB0, double errP0[],double errP2[], double errP4[], double errB0[], double kminP0,double kmaxP0,  double kminP2,double kmaxP2,double kminP4,double kmaxP4,double kminB0,double kmaxB0, char *type_BAORSD, char *fit_BAO, char *do_power_spectrum, char *do_bispectrum)
+void get_cov_from_file(char *path_to_cov, char *path_to_cov_bis, double cov[], int Ncov,int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao,  int NeffP2rsd, int NeffP4bao, int NeffP4rsd , int NeffB0bao, int NeffB0rsd, double errP0bao[], double errP0rsd[],double errP2bao[], double errP2rsd[], double errP4bao[],  double errP4rsd[] , double errB0bao[], double errB0rsd[], double kminP0bao,  double kminP0rsd,  double kmaxP0bao,  double kmaxP0rsd,  double kminP2bao, double kminP2rsd ,double kmaxP2bao, double kmaxP2rsd,double kminP4bao, double kminP4rsd,double kmaxP4bao, double kmaxP4rsd,double kminB0bao, double kminB0rsd,double kmaxB0bao, double kmaxB0rsd, char *type_BAORSD, char *fit_BAO, char *fit_RSD, char *do_power_spectrum, char *do_bispectrum)
+{
+FILE *f;
+double scaling_factor=1.;//number of realizations when fitting the mean
+double k,k1,k2,k3,p0,p2,p4,b0;
+int Nlines, i, j, s;
 
-//void get_cov(char *path_to_mocks, char *path_to_mocks_bis, double cov[], int Ncov,int Nrealizations, int NeffP0, int NeffP2, int NeffP4, int NeffB0, double errP0[],double errP2[], double errP4[], double errB0[], double kminP0,double kmaxP0,  double kminP2,double kmaxP2,double kminP4,double kmaxP4,double kminB0,double kmaxB0, char *type_BAORSD, char *fit_BAO, char *do_power_spectrum, char *do_bispectrum)
-void get_cov(char *path_to_mocks_bao, char *path_to_mocks_rsd, char *path_to_mocks_bis_bao, char *path_to_mocks_bis_rsd, double cov[], int Ncov,int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao,  int NeffP2rsd, int NeffP4bao, int NeffP4rsd , int NeffB0bao, int NeffB0rsd, double errP0bao[], double errP0rsd[],double errP2bao[], double errP2rsd[], double errP4bao[],  double errP4rsd[] , double errB0bao[], double errB0rsd[], double kminP0bao,  double kminP0rsd,  double kmaxP0bao,  double kmaxP0rsd,  double kminP2bao, double kminP2rsd ,double kmaxP2bao, double kmaxP2rsd,double kminP4bao, double kminP4rsd,double kmaxP4bao, double kmaxP4rsd,double kminB0bao, double kminB0rsd,double kmaxB0bao, double kmaxB0rsd, char *type_BAORSD, char *fit_BAO, char *fit_RSD, char *do_power_spectrum, char *do_bispectrum)
+double *Variance;
+
+Nlines = countlines(path_to_cov);
+
+if (Nlines != Ncov)
+{
+  printf("Error: The dimension of your input covariance of %d does not match the expected number %d corresponding to the chosen fittype. \n. Exiting now...\n",Nlines,Ncov);exit(0);
+}
+
+f=fopen(path_to_cov,"r");
+
+Variance = (double*) calloc( Ncov*Ncov, sizeof(double));
+        
+//Build covariance
+
+for(j=0;j<Ncov;j++)
+{
+for(i=0;i<Ncov;i++)
+{
+if (!fscanf(f, "%lf", &Variance[j+i*Ncov])){break;}
+printf("%lf\n",Variance[j+i*Ncov]);
+}
+}
+
+
+//write somewhere the covariance used
+/*
+for(j=0;j<Ncov;j++)
+{
+for(i=0;i<Ncov;i++)
+{
+if(i!=Ncov-1){printf("%lf\t",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance[j+j*Ncov]));}
+else{printf("%lf\n",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance[j+j*Ncov]));}
+}
+}
+*/
+//exit(0);
+       //invert covariance
+
+        gsl_matrix * m = gsl_matrix_alloc (Ncov, Ncov);
+        gsl_matrix * inverse = gsl_matrix_alloc (Ncov, Ncov);
+        gsl_matrix * identity = gsl_matrix_alloc (Ncov, Ncov);
+
+        gsl_permutation * perm = gsl_permutation_alloc (Ncov);
+         for(i=0;i<Ncov;i++)
+         {
+         for(j=0;j<Ncov;j++)
+         {
+                if(Variance[i+i*Ncov]==0 || Variance[j+j*Ncov]==0){printf("Error 0-element(s) in the diagonal of covarince: Exiting now...\n");exit(0);}
+                gsl_matrix_set (m, i, j, Variance[j+i*Ncov]);
+         }
+         }
+           gsl_linalg_LU_decomp (m, perm, &s);
+           gsl_linalg_LU_invert (m, perm, inverse);
+
+         for(i=0;i<Ncov;i++)
+         {
+         for(j=0;j<Ncov;j++)
+         {
+           cov[j+Ncov*i]=1./((1.-(Ncov+1.))*gsl_matrix_get (inverse, i, j))*(1./scaling_factor);
+         }
+         }
+
+//free stuff!
+free(Variance);
+
+gsl_matrix_free(m);
+gsl_matrix_free(inverse);
+gsl_matrix_free(identity);
+gsl_permutation_free(perm);
+
+/*
+if( strcmp(do_bispectrum, "yes") == 0)
+{
+free(B0av);
+freeTokens(B0,Nrealizations);
+}
+*/
+}//end of get_cov_from_mocks
+
+
+
+//void get_cov_from_mocks(char *path_to_mocks, char *path_to_mocks_bis, double cov[], int Ncov,int Nrealizations, int NeffP0, int NeffP2, int NeffP4, int NeffB0, double errP0[],double errP2[], double errP4[], double errB0[], double kminP0,double kmaxP0,  double kminP2,double kmaxP2,double kminP4,double kmaxP4,double kminB0,double kmaxB0, char *type_BAORSD, char *fit_BAO, char *do_power_spectrum, char *do_bispectrum)
+void get_cov_from_mocks(char *path_to_mocks_bao, char *path_to_mocks_rsd, char *path_to_mocks_bis_bao, char *path_to_mocks_bis_rsd, double cov[], int Ncov,int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao,  int NeffP2rsd, int NeffP4bao, int NeffP4rsd , int NeffB0bao, int NeffB0rsd, double errP0bao[], double errP0rsd[],double errP2bao[], double errP2rsd[], double errP4bao[],  double errP4rsd[] , double errB0bao[], double errB0rsd[], double kminP0bao,  double kminP0rsd,  double kmaxP0bao,  double kmaxP0rsd,  double kminP2bao, double kminP2rsd ,double kmaxP2bao, double kmaxP2rsd,double kminP4bao, double kminP4rsd,double kmaxP4bao, double kmaxP4rsd,double kminB0bao, double kminB0rsd,double kmaxB0bao, double kmaxB0rsd, char *type_BAORSD, char *fit_BAO, char *fit_RSD, char *do_power_spectrum, char *do_bispectrum)
 {
 int bao,rsd;
 int iteration,iteration_ini,iteration_fin;
@@ -1024,7 +1117,7 @@ free(B0av);
 freeTokens(B0,Nrealizations);
 }
 */
-}//end of get_cov
+}//end of get_cov_from_mocks
 
 void get_mask(char *path, double posAV[], double pos[],double W0[], double W2[], double W4[], double W6[], double W8[], int Nmask, char *type_BAORSD, double params[],char *renormalize_window)
 {

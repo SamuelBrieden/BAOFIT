@@ -51,6 +51,8 @@ char path_to_data1_bao[2000];
 char path_to_data2_bao[2000];
 char path_to_mocks1_bao[2000];
 char path_to_mocks2_bao[2000];
+char path_to_mocks1_ending[10];
+char path_to_mocks2_ending[10];
 char path_to_data1_rsd[2000];
 char path_to_data2_rsd[2000];
 char path_to_mocks1_rsd[2000];
@@ -655,8 +657,15 @@ if(strcmp(do_bispectrum, "yes") == 0){Ncov=Ncov+NeffB0rsd;}
 
                  cov= (double*) calloc( Ncov*Ncov, sizeof(double));
 printf("Ncov=%d\n",Ncov);
-get_cov(path_to_mocks1_bao,path_to_mocks1_rsd,path_to_mocks1_bis_bao,path_to_mocks1_bis_rsd,cov,Ncov,Nrealizations, NeffP0bao,NeffP0rsd, NeffP2bao,NeffP2rsd, NeffP4bao,NeffP4rsd, NeffB0bao,NeffB0rsd,errP0bao,errP0rsd,errP2bao,errP2rsd,errP4bao,errP4rsd,errB0bao,errB0rsd,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
 
+path_to_mocks1_ending = strrchr(path_to_mocks1_bao, '.'); //this function sets a pointer to the last occurence of a character in a string. Used to identify the filetype.
+// read the covariance from a file, if the extension is ".cov", otherwise "path_to_mocks_ending" is  NULL Pointer and the covariance is read from mocks.
+if ((strcmp(path_to_mocks1_ending, ".cov") == 0)){
+  get_cov_from_file(path_to_mocks1_bao,path_to_mocks1_bis_bao,cov,Ncov,Nrealizations, NeffP0bao,NeffP0rsd, NeffP2bao,NeffP2rsd, NeffP4bao,NeffP4rsd, NeffB0bao,NeffB0rsd,errP0bao,errP0rsd,errP2bao,errP2rsd,errP4bao,errP4rsd,errB0bao,errB0rsd,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
+}  
+else {
+  get_cov_from_mocks(path_to_mocks1_bao,path_to_mocks1_rsd,path_to_mocks1_bis_bao,path_to_mocks1_bis_rsd,cov,Ncov,Nrealizations, NeffP0bao,NeffP0rsd, NeffP2bao,NeffP2rsd, NeffP4bao,NeffP4rsd, NeffB0bao,NeffB0rsd,errP0bao,errP0rsd,errP2bao,errP2rsd,errP4bao,errP4rsd,errB0bao,errB0rsd,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
+}
 //exit(0);
 
 if(Nchunks==2)//both chunks considered independent
@@ -800,8 +809,15 @@ get_data_bis(path_to_data2_bis_rsd,k11rsdSGC,k22rsdSGC,k33rsdSGC,B0rsdSGC,Bnoise
 }
 
                  covSGC= (double*) calloc( Ncov*Ncov, sizeof(double));
-//get_cov(path_to_mocks2,path_to_mocks2_bis,covSGC,Ncov,Nrealizations, NeffP0SGC, NeffP2SGC, NeffP4SGC, NeffB0SGC,errP0SGC,errP2SGC,errP4SGC,errB0SGC,kminP0,kmaxP0,kminP2,kmaxP2,kminP4,kmaxP4,kminB0,kmaxB0,type_of_analysis,fit_BAO,do_power_spectrum, do_bispectrum);
-get_cov(path_to_mocks2_bao,path_to_mocks2_rsd,path_to_mocks2_bis_bao,path_to_mocks2_bis_rsd,covSGC,Ncov,Nrealizations, NeffP0baoSGC,NeffP0rsdSGC, NeffP2baoSGC,NeffP2rsdSGC, NeffP4baoSGC,NeffP4rsdSGC, NeffB0baoSGC,NeffB0rsdSGC,errP0baoSGC,errP0rsdSGC,errP2baoSGC,errP2rsdSGC,errP4baoSGC,errP4rsdSGC,errB0baoSGC,errB0rsdSGC,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
+path_to_mocks2_ending = strrchr(path_to_mocks2_bao, '.'); //this library function sets a pointer to the last occurence of a character in a string. Used to identify the filetype.
+// read the covariance from a file, if the extension is ".cov", otherwise "path_to_mocks_ending" is  NULL Pointer and the covariance is read from mocks.
+if ((strcmp(path_to_mocks2_ending, ".cov") == 0)){
+  get_cov_from_file(path_to_mocks2_bao,path_to_mocks2_bis_bao,covSGC,Ncov,Nrealizations, NeffP0baoSGC,NeffP0rsdSGC, NeffP2baoSGC,NeffP2rsdSGC, NeffP4baoSGC,NeffP4rsdSGC, NeffB0baoSGC,NeffB0rsdSGC,errP0baoSGC,errP0rsdSGC,errP2baoSGC,errP2rsdSGC,errP4baoSGC,errP4rsdSGC,errB0baoSGC,errB0rsdSGC,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
+}  
+else {
+  //get_cov_from_mocks(path_to_mocks2,path_to_mocks2_bis,covSGC,Ncov,Nrealizations, NeffP0SGC, NeffP2SGC, NeffP4SGC, NeffB0SGC,errP0SGC,errP2SGC,errP4SGC,errB0SGC,kminP0,kmaxP0,kminP2,kmaxP2,kminP4,kmaxP4,kminB0,kmaxB0,type_of_analysis,fit_BAO,do_power_spectrum, do_bispectrum);
+  get_cov_from_mocks(path_to_mocks2_bao,path_to_mocks2_rsd,path_to_mocks2_bis_bao,path_to_mocks2_bis_rsd,covSGC,Ncov,Nrealizations, NeffP0baoSGC,NeffP0rsdSGC, NeffP2baoSGC,NeffP2rsdSGC, NeffP4baoSGC,NeffP4rsdSGC, NeffB0baoSGC,NeffB0rsdSGC,errP0baoSGC,errP0rsdSGC,errP2baoSGC,errP2rsdSGC,errP4baoSGC,errP4rsdSGC,errB0baoSGC,errB0rsdSGC,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
+}
 
 
 }

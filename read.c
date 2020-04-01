@@ -570,6 +570,8 @@ fscanf(f,"%*s %*s %*s %*s %*d\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
+fscanf(f,"%*s %*s %*s\n");
+fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s %*s %*s %*s %*s %*s %*s\n");
 
 if(iteration==1){kminP0=kminP0bao;kminP2=kminP2bao;kminP4=kminP4bao;kmaxP0=kmaxP0bao;kmaxP2=kmaxP2bao;kmaxP4=kmaxP4bao;}

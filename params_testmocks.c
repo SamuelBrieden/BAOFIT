@@ -13,15 +13,15 @@
 #Number of chunks: 2
 
 #Read input parameters for Power Spectrum
-#Path to data1BAO:   /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C_REAL.txt
-#Path to data2BAO:   /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_REAL.txt
-#Path to data1FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C_REAL.txt
-#Path to data2FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_REAL.txt
+#Path to data1BAO:   /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C_0001.txt
+#Path to data2BAO:   /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_0001.txt
+#Path to data1FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C_0001.txt
+#Path to data2FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_0001.txt
 #Path to mocks1BAO/cov1:  /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C_
 #Path to mocks2BAO/cov2:  /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_
 #Path to mocks1FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C_
 #Path to mocks2FS:  /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_
-#number of realizations: 1000
+#number of 0001izations: 1000
 #Path to mask1 (none if no mask): none
 #Path to mask2 (none if no mask): none
 #Renormalize window (yes/no): no
@@ -87,5 +87,5 @@
 
 #Read out parameters
 #Path to output: ./test
-#Identifier of output: CMASS_V6C_REAL
+#Identifier of output: CMASS_V6C_0001
 #Plot best-fit (yes/no): yes

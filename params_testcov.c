@@ -1,5 +1,5 @@
 #Main parameters
-#Type of fit (BAOISO/BAOANISO/FS/FSBAOISO/FSBAOANISO): FSBAOANISO
+#Type of fit (BAOISO/BAOANISO/FS/FSBAOISO/FSBAOANISO): BAOANISO
 
 #Include power spectrum (yes/no): yes
 #FIT BAO to P0/P2/P4/P02/P024/P24/P04: P02
@@ -17,10 +17,10 @@
 #Path to data2BAO:   /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_0001.txt
 #Path to data1FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C_0001.txt
 #Path to data2FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_0001.txt
-#Path to mocks1BAO/cov1:  /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C.cov
-#Path to mocks2BAO/cov2:  /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C.cov
-#Path to mocks1FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_N_V6C.cov
-#Path to mocks2FS:  /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C.cov
+#Path to mocks1BAO/cov1:  test.cov
+#Path to mocks2BAO/cov2:  test.cov
+#Path to mocks1FS: 
+#Path to mocks2FS: 
 #number of Realizations: 1000
 #Path to mask1 (none if no mask): none
 #Path to mask2 (none if no mask): none

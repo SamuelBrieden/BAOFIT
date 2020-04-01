@@ -1,5 +1,5 @@
 #Main parameters
-#Type of fit (BAOISO/BAOANISO/FS/FSBAOISO/FSBAOANISO): FSBAOANISO
+#Type of fit (BAOISO/BAOANISO/FS/FSBAOISO/FSBAOANISO): BAOANISO
 
 #Include power spectrum (yes/no): yes
 #FIT BAO to P0/P2/P4/P02/P024/P24/P04: P02

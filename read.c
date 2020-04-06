@@ -242,6 +242,7 @@ void get_cov_from_file(char *path_to_cov, char *path_to_cov_bis, double cov[], i
 {
 FILE *f;
 double scaling_factor=1.;//number of realizations when fitting the mean
+double hartlap_factor;
 double k,k1,k2,k3,p0,p2,p4,b0;
 int Nlines, i, j, s;
 
@@ -282,6 +283,9 @@ else{printf("%lf\n",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance[j+j*Ncov
 }
 */
 //exit(0);
+
+hartlap_factor = (1.-(Ncov+1.)/(Nrealizations*1.-1.));
+
        //invert covariance
 
         gsl_matrix * m = gsl_matrix_alloc (Ncov, Ncov);
@@ -304,7 +308,7 @@ else{printf("%lf\n",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance[j+j*Ncov
          {
          for(j=0;j<Ncov;j++)
          {
-           cov[j+Ncov*i]=1./((1.-(Ncov+1.)/(Ncounter*1.-1.))*gsl_matrix_get (inverse, i, j))*(1./scaling_factor);
+           cov[j+Ncov*i]=1./(hartlap_factor*gsl_matrix_get (inverse, i, j))*(1./scaling_factor);
          }
          }
 

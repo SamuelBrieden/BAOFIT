@@ -86,6 +86,6 @@
 #Same FoG parameter for bispectrum (yes/no): no
 
 #Read out parameters
-#Path to output: /home/sbrieden/BAOFIT/test
+#Path to output: /home/sbrieden/datatools/BAOFIT/test
 #Identifier of output: CMASS_V6C_0001
 #Plot best-fit (yes/no): yes

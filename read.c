@@ -37,7 +37,9 @@ double k1,k2,k3;
 FILE *f;
 //N=countlines(path)-27;
 N=countlines(path);
+skipheader(f);
 f=fopen(path,"r");
+/*
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s %*s %*s %*d\n");
@@ -69,12 +71,13 @@ fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s %*s %*s %*s %*s %*s %*s\n");
+*/
 Neff=0;
 for(i=0;i<N;i++)
 {
 
 if(mode==0){
-fscanf(f,"%*f %lf %*f %*f %*f %*f %*f %*d %*f\n",&k);
+fscanf(f,"%lf %*f %*f \n",&k);
 if(k>kmin && k<kmax){Neff++;}
 }
 

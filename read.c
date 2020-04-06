@@ -238,7 +238,7 @@ f=fopen(path,"r");
  * by taking inside the function "path_to_cov" as the "path_to_mocks_bao" corresponding to the first line in the .param file
  */
 //void get_cov_from_mocks(char *path_to_mocks, char *path_to_mocks_bis, double cov[], int Ncov,int Nrealizations, int NeffP0, int NeffP2, int NeffP4, int NeffB0, double errP0[],double errP2[], double errP4[], double errB0[], double kminP0,double kmaxP0,  double kminP2,double kmaxP2,double kminP4,double kmaxP4,double kminB0,double kmaxB0, char *type_BAORSD, char *fit_BAO, char *do_power_spectrum, char *do_bispectrum)
-void get_cov_from_file(char *path_to_cov, char *path_to_cov_bis, double cov[], int Ncov,int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao,  int NeffP2rsd, int NeffP4bao, int NeffP4rsd , int NeffB0bao, int NeffB0rsd, double errP0bao[], double errP0rsd[],double errP2bao[], double errP2rsd[], double errP4bao[],  double errP4rsd[] , double errB0bao[], double errB0rsd[], double kminP0bao,  double kminP0rsd,  double kmaxP0bao,  double kmaxP0rsd,  double kminP2bao, double kminP2rsd ,double kmaxP2bao, double kmaxP2rsd,double kminP4bao, double kminP4rsd,double kmaxP4bao, double kmaxP4rsd,double kminB0bao, double kminB0rsd,double kmaxB0bao, double kmaxB0rsd, char *type_BAORSD, char *fit_BAO, char *fit_RSD, char *do_power_spectrum, char *do_bispectrum)
+void get_cov_from_file(char *path_to_cov, char *path_to_cov_bis, double cov[], int Ncov,int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao,  int NeffP2rsd, int NeffP4bao, int NeffP4rsd , int NeffB0bao, int NeffB0rsd, char *do_power_spectrum, char *do_bispectrum)
 {
 FILE *f;
 double scaling_factor=1.;//number of realizations when fitting the mean
@@ -271,7 +271,7 @@ printf("%lf\n",Variance[j+i*Ncov]);
 
 
 //write somewhere the covariance used
-
+/*
 for(j=0;j<Ncov;j++)
 {
 for(i=0;i<Ncov;i++)
@@ -280,7 +280,7 @@ if(i!=Ncov-1){printf("%lf\t",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance
 else{printf("%lf\n",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance[j+j*Ncov]));}
 }
 }
-
+*/
 //exit(0);
        //invert covariance
 
@@ -304,7 +304,7 @@ else{printf("%lf\n",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance[j+j*Ncov
          {
          for(j=0;j<Ncov;j++)
          {
-           cov[j+Ncov*i]=1./((1.-(Ncov+1.))*gsl_matrix_get (inverse, i, j))*(1./scaling_factor);
+           cov[j+Ncov*i]=1./((1.-(Ncov+1.)/(Ncounter*1.-1.))*gsl_matrix_get (inverse, i, j))*(1./scaling_factor);
          }
          }
 
@@ -325,10 +325,29 @@ freeTokens(B0,Nrealizations);
 */
 }//end of get_cov_from_mocks
 
+void write_cov_file(char *covfile, double Covariance[], int Ncov, int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao, int NeffP2rsd, int NeffP4bao, int NeffP4rsd, int NeffB0bao, int NeffB0rsd)
+{
+FILE *f
 
+f=fopen(covfile,"w");
+
+//Write Header
+fprintf(f,"# Nrealizations %d, \t NeffP0bao %d, \t NeffP2bao %d, \t NeffP4bao %d,\t NeffP0rsd %d, \t NeffP2rsd %d, \t NeffP4rsd %d, \t NeffB0bao %d, \t NeffB0rsd %d\n", Nrealizations, NeffP0bao, NeffP2bao, NeffP4bao, NeffP0rsd, NeffP2rsd, NeffP4rsd, NeffB0bao, NeffB0rsd);
+
+// Write Covariance
+for(j=0;j<Ncov;j++)
+{
+for(i=0;i<Ncov;i++)
+{
+if(i!=Ncov-1){printf("%lf\t",Covarianc[j+i*Ncov]);}
+else{printf("%lf\n",Covariance[j+i*Ncov]);}
+}
+}
+  
+}
 
 //void get_cov_from_mocks(char *path_to_mocks, char *path_to_mocks_bis, double cov[], int Ncov,int Nrealizations, int NeffP0, int NeffP2, int NeffP4, int NeffB0, double errP0[],double errP2[], double errP4[], double errB0[], double kminP0,double kmaxP0,  double kminP2,double kmaxP2,double kminP4,double kmaxP4,double kminB0,double kmaxB0, char *type_BAORSD, char *fit_BAO, char *do_power_spectrum, char *do_bispectrum)
-void get_cov_from_mocks(char *path_to_mocks_bao, char *path_to_mocks_rsd, char *path_to_mocks_bis_bao, char *path_to_mocks_bis_rsd, double cov[], int Ncov,int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao,  int NeffP2rsd, int NeffP4bao, int NeffP4rsd , int NeffB0bao, int NeffB0rsd, double errP0bao[], double errP0rsd[],double errP2bao[], double errP2rsd[], double errP4bao[],  double errP4rsd[] , double errB0bao[], double errB0rsd[], double kminP0bao,  double kminP0rsd,  double kmaxP0bao,  double kmaxP0rsd,  double kminP2bao, double kminP2rsd ,double kmaxP2bao, double kmaxP2rsd,double kminP4bao, double kminP4rsd,double kmaxP4bao, double kmaxP4rsd,double kminB0bao, double kminB0rsd,double kmaxB0bao, double kmaxB0rsd, char *type_BAORSD, char *fit_BAO, char *fit_RSD, char *do_power_spectrum, char *do_bispectrum)
+void get_cov_from_mocks(char *path_to_mocks_bao, char *path_to_mocks_rsd, char *path_to_mocks_bis_bao, char *path_to_mocks_bis_rsd, char *covfile, double cov[], int Ncov,int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao,  int NeffP2rsd, int NeffP4bao, int NeffP4rsd , int NeffB0bao, int NeffB0rsd, double errP0bao[], double errP0rsd[],double errP2bao[], double errP2rsd[], double errP4bao[],  double errP4rsd[] , double errB0bao[], double errB0rsd[], double kminP0bao,  double kminP0rsd,  double kmaxP0bao,  double kmaxP0rsd,  double kminP2bao, double kminP2rsd ,double kmaxP2bao, double kmaxP2rsd,double kminP4bao, double kminP4rsd,double kmaxP4bao, double kmaxP4rsd,double kminB0bao, double kminB0rsd,double kmaxB0bao, double kmaxB0rsd, char *type_BAORSD, char *fit_BAO, char *fit_RSD, char *do_power_spectrum, char *do_bispectrum)
 {
 int bao,rsd;
 int iteration,iteration_ini,iteration_fin;
@@ -1047,8 +1066,11 @@ Variance[j+i*Ncov]=Variance[j+i*Ncov]+ielement*jelement/(Ncounter*1.-1.);
 }
 }
 
-//write somewhere the covariance used
+write_cov_file(covfile,Variance,Ncov,Nrealizations,NeffP0bao,NeffP0rsd,NeffP2bao,NeffP2rsd,NeffP4bao,NeffP4rsd,NeffB0bao,NeffB0rsd);
 
+
+//write somewhere the covariance used
+/*
 for(j=0;j<Ncov;j++)
 {
 for(i=0;i<Ncov;i++)
@@ -1057,7 +1079,7 @@ if(i!=Ncov-1){printf("%lf\t",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance
 else{printf("%lf\n",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance[j+j*Ncov]));}
 }
 }
-
+*/
 //exit(0);
        //invert covariance
 

@@ -154,6 +154,7 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
    for(i=0;i<N;i++)
    {
      fscanf(f,"%lf %lf %lf\n",&k,&p0,&p2);
+     p4=p2;
    
         if(k>kminP0 && k<kmaxP0)
         {
@@ -172,7 +173,7 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
              else{P2[i2]=p2;}
              i2++;
            }
-           /*
+
            if(k>kminP4 && k<kmaxP4)
            {
              k4[i4]=k;
@@ -181,7 +182,7 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
              else{P4[i4]=p4;}
              i4++;
            }
-           */
+
         }
         if(strcmp(type_BAORSD, "FS") == 0 || strcmp(type_BAORSD, "BAOANISO") == 0 ||  strcmp(type_BAORSD, "FSBAOANISO") == 0){
 
@@ -192,7 +193,7 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
              P2[i2]=p2;
              i2++;
            }
-           /*
+
            if(k>kminP4 && k<kmaxP4)
            {
              k4[i4]=k;
@@ -200,7 +201,7 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
              P4[i4]=p4;
              i4++;
            }
-           */
+
         }
 
 

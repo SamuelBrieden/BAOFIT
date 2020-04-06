@@ -285,8 +285,12 @@ else{printf("%lf\n",Variance[j+i*Ncov]/sqrt(Variance[i+i*Ncov]*Variance[j+j*Ncov
 */
 //exit(0);
 
-hartlap_factor = (1.-(Ncov+1.)/(Nrealizations*1.-1.));
-
+if (Nrealizations<2){
+  hartlap_factor = 1.;
+}
+else {
+  hartlap_factor = 1./(1.-(Ncov+1.)/(Nrealizations*1.-1.));
+}
        //invert covariance
 
         gsl_matrix * m = gsl_matrix_alloc (Ncov, Ncov);
@@ -309,7 +313,7 @@ hartlap_factor = (1.-(Ncov+1.)/(Nrealizations*1.-1.));
          {
          for(j=0;j<Ncov;j++)
          {
-           cov[j+Ncov*i]=1./(hartlap_factor*gsl_matrix_get (inverse, i, j))*(1./scaling_factor);
+           cov[j+Ncov*i]=hartlap_factor/(gsl_matrix_get (inverse, i, j))*(1./scaling_factor);
          }
          }
 

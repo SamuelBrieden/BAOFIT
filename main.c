@@ -669,12 +669,12 @@ if (path_to_mocks1_ending != NULL){
     get_cov_from_file(path_to_mocks1_bao,path_to_mocks1_bis_bao,cov,Ncov,Nrealizations, NeffP0bao,NeffP0rsd, NeffP2bao,NeffP2rsd, NeffP4bao,NeffP4rsd, NeffB0bao,NeffB0rsd,do_power_spectrum, do_bispectrum);
   }  
   else {
-    sprintf(covfile1,"%s/%s1.cov",path_output,identifier);
+    sprintf(covfile1,"%s/%s_1.cov",path_output,identifier);
     get_cov_from_mocks(path_to_mocks1_bao,path_to_mocks1_rsd,path_to_mocks1_bis_bao,path_to_mocks1_bis_rsd,covfile1,cov,Ncov,Nrealizations, NeffP0bao,NeffP0rsd, NeffP2bao,NeffP2rsd, NeffP4bao,NeffP4rsd, NeffB0bao,NeffB0rsd,errP0bao,errP0rsd,errP2bao,errP2rsd,errP4bao,errP4rsd,errB0bao,errB0rsd,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
   }
 }
 else {
-  sprintf(covfile1,"%s/%s1.cov",path_output,identifier);
+  sprintf(covfile1,"%s/%s_1.cov",path_output,identifier);
   printf("Covfile = %s\n",covfile1);
   get_cov_from_mocks(path_to_mocks1_bao,path_to_mocks1_rsd,path_to_mocks1_bis_bao,path_to_mocks1_bis_rsd,covfile1,cov,Ncov,Nrealizations, NeffP0bao,NeffP0rsd, NeffP2bao,NeffP2rsd, NeffP4bao,NeffP4rsd, NeffB0bao,NeffB0rsd,errP0bao,errP0rsd,errP2bao,errP2rsd,errP4bao,errP4rsd,errB0bao,errB0rsd,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
 }
@@ -828,12 +828,12 @@ if (path_to_mocks2_ending != NULL){
     get_cov_from_file(path_to_mocks2_bao,path_to_mocks2_bis_bao,covSGC,Ncov,Nrealizations, NeffP0baoSGC,NeffP0rsdSGC, NeffP2baoSGC,NeffP2rsdSGC, NeffP4baoSGC,NeffP4rsdSGC, NeffB0baoSGC,NeffB0rsdSGC,do_power_spectrum, do_bispectrum);
   }  
   else {
-    sprintf(covfile2,"%s/%s2.cov",path_output,identifier);
+    sprintf(covfile2,"%s/%s_2.cov",path_output,identifier);
     get_cov_from_mocks(path_to_mocks2_bao,path_to_mocks2_rsd,path_to_mocks2_bis_bao,path_to_mocks2_bis_rsd,covfile2,covSGC,Ncov,Nrealizations, NeffP0baoSGC,NeffP0rsdSGC, NeffP2baoSGC,NeffP2rsdSGC, NeffP4baoSGC,NeffP4rsdSGC, NeffB0baoSGC,NeffB0rsdSGC,errP0baoSGC,errP0rsdSGC,errP2baoSGC,errP2rsdSGC,errP4baoSGC,errP4rsdSGC,errB0baoSGC,errB0rsdSGC,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
   }
 }
 else {
-  sprintf(covfile2,"%s/%s2.cov",path_output,identifier);
+  sprintf(covfile2,"%s/%s_2.cov",path_output,identifier);
   get_cov_from_mocks(path_to_mocks2_bao,path_to_mocks2_rsd,path_to_mocks2_bis_bao,path_to_mocks2_bis_rsd,covfile2,covSGC,Ncov,Nrealizations, NeffP0baoSGC,NeffP0rsdSGC, NeffP2baoSGC,NeffP2rsdSGC, NeffP4baoSGC,NeffP4rsdSGC, NeffB0baoSGC,NeffB0rsdSGC,errP0baoSGC,errP0rsdSGC,errP2baoSGC,errP2rsdSGC,errP4baoSGC,errP4rsdSGC,errB0baoSGC,errB0rsdSGC,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
 }
 

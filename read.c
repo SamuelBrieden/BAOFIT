@@ -344,8 +344,8 @@ for(j=0;j<Ncov;j++)
 {
 for(i=0;i<Ncov;i++)
 {
-if(i!=Ncov-1){printf("%lf\t",Covariance[j+i*Ncov]);}
-else{printf("%lf\n",Covariance[j+i*Ncov]);}
+if(i!=Ncov-1){fprintf(f,"%lf\t",Covariance[j+i*Ncov]);}
+else{fprintf(f,"%lf\n",Covariance[j+i*Ncov]);}
 }
 }
   

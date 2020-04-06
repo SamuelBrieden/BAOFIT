@@ -112,7 +112,8 @@ double k,p0,p2,p4,kav;
 //N=countlines(path)-27;
 N=countlines(path);
 f=fopen(path,"r");
-
+skipheader(f);
+/*
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s %*s %*s %*d\n");
@@ -145,16 +146,16 @@ fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s %*s %*s %*s %*s %*s %*s\n");
 printf("I22=%lf, Sumw=%lf\n",I22,sumw);
-
+*/
    i0=0;i2=0;i4=0;
    for(i=0;i<N;i++)
    {
-     fscanf(f,"%lf %lf %lf %*f %lf %*f %lf %*d %lf\n",&kav,&k,&p0,&p2,&p4,&Pnoise);
+     fscanf(f,"%lf %lf %lf\n",&k,&p0,&p2);
    
         if(k>kminP0 && k<kmaxP0)
         {
            k0[i0]=k;
-           kav0[i0]=kav;
+           kav0[i0]=k;
            P0[i0]=p0;
            i0++;
         }
@@ -163,11 +164,12 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
            if(k>kminP2 && k<kmaxP2)
            {
              k2[i2]=k;
-             kav2[i2]=kav;
+             kav2[i2]=k;
              if(baorsd==0){P2[i2]=p0+2./5.*p2;}
              else{P2[i2]=p2;}
              i2++;
            }
+           /*
            if(k>kminP4 && k<kmaxP4)
            {
              k4[i4]=k;
@@ -176,6 +178,7 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
              else{P4[i4]=p4;}
              i4++;
            }
+           */
         }
         if(strcmp(type_BAORSD, "FS") == 0 || strcmp(type_BAORSD, "BAOANISO") == 0 ||  strcmp(type_BAORSD, "FSBAOANISO") == 0){
 
@@ -186,6 +189,7 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
              P2[i2]=p2;
              i2++;
            }
+           /*
            if(k>kminP4 && k<kmaxP4)
            {
              k4[i4]=k;
@@ -193,11 +197,13 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
              P4[i4]=p4;
              i4++;
            }
+           */
         }
 
 
    } 
 fclose(f);
+Pnoise = 500.;
 parameter_value[0]=Pnoise;
 parameter_value[1]=sumw;
 parameter_value[2]=I22;

@@ -3,9 +3,9 @@
 
 #Include power spectrum (yes/no): yes
 #FIT BAO to P0/P2/P4/P02/P024/P24/P04: P02
-#k-range for P0 computation (double/double): 0.02 0.30
-#k-range for P2 computation (double/double): 0.02 0.30
-#k-range for P4 computation (double/double): 0.02 0.30
+#k-range for P0 computation (double/double): 0.0 0.50
+#k-range for P2 computation (double/double): 0.0 0.50
+#k-range for P4 computation (double/double): 0.0 0.50
 #FIT FS to P0/P2/P4/P02/P024/P24/P04: P024
 #k-range for P0 computation (double/double): 0.02 0.15
 #k-range for P2 computation (double/double): 0.02 0.15

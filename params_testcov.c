@@ -19,8 +19,8 @@
 #Path to data2FS: /home/DATA/sbrieden/rustico_output/patchy_mocks/prerecon/original/Power_Spectrum_CMASS_S_V6C_0001.txt
 #Path to mocks1BAO/cov1:  ./test/CMASS_V6C_0001_1.cov
 #Path to mocks2BAO/cov2:  ./test/CMASS_V6C_0001_2.cov
-#Path to mocks1FS: 
-#Path to mocks2FS: 
+#Path to mocks1FS: none
+#Path to mocks2FS: none
 #number of Realizations: 1000
 #Path to mask1 (none if no mask): none
 #Path to mask2 (none if no mask): none

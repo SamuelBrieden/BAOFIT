@@ -662,7 +662,7 @@ printf("Ncov=%d\n",Ncov);
 
 path_to_mocks1_ending = strrchr(path_to_mocks1_bao, '.'); //this function sets a pointer to the last occurence of a character in a string. Used to identify the filetype.
 // read the covariance from a file, if the extension is ".cov", otherwise "path_to_mocks_ending" is  NULL Pointer and the covariance is read from mocks.
-printf("Mock ending = %s\n",&path_to_mocks1_ending);
+//printf("Mock ending = %s\n",*path_to_mocks1_ending);
 
 if (path_to_mocks1_ending != NULL){
   if ((strcmp(path_to_mocks1_ending, ".cov") == 0)){

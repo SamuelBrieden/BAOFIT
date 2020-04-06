@@ -256,6 +256,7 @@ if (Nlines != Ncov)
 }
 
 f=fopen(path_to_cov,"r");
+skipheader(f);
 
 Variance = (double*) calloc( Ncov*Ncov, sizeof(double));
         
@@ -265,8 +266,8 @@ for(j=0;j<Ncov;j++)
 {
 for(i=0;i<Ncov;i++)
 {
-if (!fscanf(f, "%lf", &Variance[j+i*Ncov])){break;}
-printf("%lf\n",Variance[j+i*Ncov]);
+//if (!fscanf(f, "%lf", &Variance[j+i*Ncov])){break;}
+fscanf(f, "%lf", &Variance[j+i*Ncov]);
 }
 }
 

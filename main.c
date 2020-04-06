@@ -222,7 +222,7 @@ fscanf(f,"%*s %*s %*s %s\n",path_to_mocks2_bao);
 fscanf(f,"%*s %*s %*s %s\n",path_to_mocks1_rsd);
 fscanf(f,"%*s %*s %*s %s\n",path_to_mocks2_rsd);
 fscanf(f,"%*s %*s %*s %d\n",&Nrealizations);
-if(Nrealizations<=0){printf("Error with number of realizations %d\n. Exiting now...\n",Nrealizations);exit(0);}
+if(Nrealizations<0){printf("Error with number of realizations %d\n. Exiting now...\n",Nrealizations);exit(0);}
 fscanf(f,"%*s %*s %*s %*s %*s %*s %*s %s\n",path_to_mask1);
 fscanf(f,"%*s %*s %*s %*s %*s %*s %*s %s\n",path_to_mask2);
 fscanf(f,"%*s %*s %*s %s\n\n",mask_renormalization);

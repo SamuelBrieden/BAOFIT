@@ -14,6 +14,6 @@ void get_cov_from_mocks(char *path_to_mocks_bao, char *path_to_mocks_rsd, char *
 
 void get_cov_from_file(char *path_to_cov, char *path_to_cov_bis, double cov[], int Ncov,int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao,  int NeffP2rsd, int NeffP4bao, int NeffP4rsd , int NeffB0bao, int NeffB0rsd, char *do_power_spectrum, char *do_bispectrum);
 
-void write_cov_file(char *covfile, double Covariance[], int Ncov, int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao, int NeffP2rsd, int NeffP4bao, int NeffP4rsd, int NeffB0bao, int NeffB0rsd)
+void write_cov_file(char *covfile, double Covariance[], int Ncov, int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao, int NeffP2rsd, int NeffP4bao, int NeffP4rsd, int NeffB0bao, int NeffB0rsd);
 
 int countPk(int mode, char *path ,double kmin,double kmax);

@@ -327,7 +327,8 @@ freeTokens(B0,Nrealizations);
 
 void write_cov_file(char *covfile, double Covariance[], int Ncov, int Nrealizations, int NeffP0bao, int NeffP0rsd, int NeffP2bao, int NeffP2rsd, int NeffP4bao, int NeffP4rsd, int NeffB0bao, int NeffB0rsd)
 {
-FILE *f
+FILE *f;
+int i,j;
 
 f=fopen(covfile,"w");
 
@@ -339,7 +340,7 @@ for(j=0;j<Ncov;j++)
 {
 for(i=0;i<Ncov;i++)
 {
-if(i!=Ncov-1){printf("%lf\t",Covarianc[j+i*Ncov]);}
+if(i!=Ncov-1){printf("%lf\t",Covariance[j+i*Ncov]);}
 else{printf("%lf\n",Covariance[j+i*Ncov]);}
 }
 }

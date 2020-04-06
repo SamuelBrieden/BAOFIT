@@ -102,6 +102,9 @@ doc_start = fgetc(myfile);
 }
 // End function, if the first non-space character is not header-like.
 if (doc_start>39){
+// set the filestream one back, so that it is one position before the first relevant character
+fseek(myfile, -1, SEEK_CUR);
+// finish function
 return;
 }
 // Else, loop over the following lines until reaching end of header
@@ -122,6 +125,8 @@ line_start = fgetc(myfile);
 // continue loop while the first character in line is header-like.
 // Loop ends, either when the header has finished or the end of the file is reached.
 } while (ch_ascii != EOF && line_start<39);
+// set the filestream one back, so that it is one position before the first relevant character
+fseek(myfile, -1, SEEK_CUR);
 }
 }
 

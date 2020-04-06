@@ -46,8 +46,8 @@ void set_parameters_convergence_parallel(int nthreads, double parameters_converg
 
 void set_mcmc_parameters(long int params[])
 {
-long int N_print=10000;//buffer to print in file AND to check for convergence (which will require to read all the writting file)
-long int Nburnin=10000;//number of firsts steps not considered
+long int N_print=8000;//buffer to print in file AND to check for convergence (which will require to read all the writting file)
+long int Nburnin=8000;//number of firsts steps not considered
 //long int N_print=1000;//buffer to print in file AND to check for convergence (which will require to read all the writting file)
 //long int Nburnin=0;//1000;//number of firsts steps not considered
 

@@ -662,6 +662,8 @@ printf("Ncov=%d\n",Ncov);
 
 path_to_mocks1_ending = strrchr(path_to_mocks1_bao, '.'); //this function sets a pointer to the last occurence of a character in a string. Used to identify the filetype.
 // read the covariance from a file, if the extension is ".cov", otherwise "path_to_mocks_ending" is  NULL Pointer and the covariance is read from mocks.
+printf("Mock ending = %s\n",&path_to_mocks1_ending);
+
 if (path_to_mocks1_ending != NULL){
   if ((strcmp(path_to_mocks1_ending, ".cov") == 0)){
     get_cov_from_file(path_to_mocks1_bao,path_to_mocks1_bis_bao,cov,Ncov,Nrealizations, NeffP0bao,NeffP0rsd, NeffP2bao,NeffP2rsd, NeffP4bao,NeffP4rsd, NeffB0bao,NeffB0rsd,do_power_spectrum, do_bispectrum);
@@ -673,6 +675,7 @@ if (path_to_mocks1_ending != NULL){
 }
 else {
   sprintf(covfile1,"%s/%s1.cov",path_output,identifier);
+  printf("Covfile = %s\n",covfile1);
   get_cov_from_mocks(path_to_mocks1_bao,path_to_mocks1_rsd,path_to_mocks1_bis_bao,path_to_mocks1_bis_rsd,covfile1,cov,Ncov,Nrealizations, NeffP0bao,NeffP0rsd, NeffP2bao,NeffP2rsd, NeffP4bao,NeffP4rsd, NeffB0bao,NeffB0rsd,errP0bao,errP0rsd,errP2bao,errP2rsd,errP4bao,errP4rsd,errB0bao,errB0rsd,kminP0bao,kminP0rsd,kmaxP0bao,kmaxP0rsd,kminP2bao,kminP2rsd,kmaxP2bao,kmaxP2rsd,kminP4bao,kminP4rsd,kmaxP4bao,kmaxP4rsd,kminB0bao,kminB0rsd,kmaxB0bao,kmaxB0rsd,type_of_analysis,fit_BAO,fit_RSD,do_power_spectrum, do_bispectrum);
 }
 //exit(0);

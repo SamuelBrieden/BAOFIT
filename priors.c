@@ -11,7 +11,7 @@ int i;
 double params_low_in[1000];
 double params_high_in[1000];
 
-//P0+P2 fixed sigma NGC+SGC
+////BAOANISO+P02+NGC+free sigma
 //params_low_in[0]=alpha_min;params_high_in[0]=alpha_max;
 
 //params_low_in[1]=alpha_min;params_high_in[1]=alpha_max;
@@ -20,35 +20,43 @@ params_low_in[0]=0.5;params_high_in[0]=1.5;
 
 params_low_in[1]=0.5;params_high_in[1]=1.5;
 
-params_low_in[2]=0;params_high_in[2]=10;
+//params_low_in[2]=0;params_high_in[2]=10;
 
-//params_low_in[2]=0;params_high_in[2]=30;//sigmapara
+params_low_in[2]=0;params_high_in[2]=30;//sigmapara
 
-//params_low_in[3]=0;params_high_in[3]=30;//sigmaperp
+params_low_in[3]=0;params_high_in[3]=30;//sigmaperp
 
-params_low_in[3]=0;params_high_in[3]=30;//beta
+params_low_in[4]=0;params_high_in[4]=30;//beta
 
-params_low_in[4]=0; params_high_in[4]=20;//B NGC
+params_low_in[5]=0; params_high_in[5]=20;//B NGC
 
-params_low_in[5]=-20000; params_high_in[5]=20000;//A1NGC-P0
+params_low_in[6]=-20000; params_high_in[6]=20000;//A1NGC-P0
 
-params_low_in[6]=-20000; params_high_in[6]=20000;//A2NGC-P0
+params_low_in[7]=-20000; params_high_in[7]=20000;//A2NGC-P0
 
-params_low_in[7]=-20000; params_high_in[7]=20000;//A3NGC-P0
+params_low_in[8]=-20000; params_high_in[8]=20000;//A3NGC-P0
 
-params_low_in[8]=-20000; params_high_in[8]=20000;// A1 NGC P2
+params_low_in[9]=-20000; params_high_in[9]=20000;//A4NGC-P0
 
-params_low_in[9]=-20000; params_high_in[9]=20000;//A2 NGC P2
+params_low_in[10]=-20000; params_high_in[10]=20000;//A5NGC-P0
 
-params_low_in[10]=-20000; params_high_in[10]=20000;// A3 NGC P2
+params_low_in[11]=-20000; params_high_in[11]=20000;// A1 NGC P2
 
-params_low_in[11]=0;params_high_in[11]=30;//b1 NGC
+params_low_in[12]=-20000; params_high_in[12]=20000;//A2 NGC P2
 
-params_low_in[12]=-10;params_high_in[12]=10;//b2 NGC
+params_low_in[13]=-20000; params_high_in[13]=20000;// A3 NGC P2
 
-params_low_in[13]=-5; params_high_in[13]=5;//A NGC
+params_low_in[14]=-20000; params_high_in[14]=20000;//A4 NGC P2
 
-params_low_in[14]=0; params_high_in[14]=20;//sigmaP NGC
+params_low_in[15]=-20000; params_high_in[15]=20000;// A5 NGC P2
+
+//params_low_in[11]=0;params_high_in[11]=30;//b1 NGC
+
+//params_low_in[12]=-10;params_high_in[12]=10;//b2 NGC
+
+//params_low_in[13]=-5; params_high_in[13]=5;//A NGC
+
+//params_low_in[14]=0; params_high_in[14]=20;//sigmaP NGC
 
 
 
@@ -84,23 +92,29 @@ double mean_in[1000];
 
 //9.462094e-01    3.098746e+03    -1.470274e+03   3.126687e+02    1.108556e+00    4.691189e+03    -2.453760e+03   4.397504e+02    1.220000e+01     9.950000e-01    1.010000e+00    3.260518e+01
 
-//P02+NGC+SGC
+//BAOANISO+P02+NGC+free sigma
 
 mean_in[0]= 1.0;
 mean_in[1]= 1.0;
-mean_in[2]= 0.74;
-mean_in[3]= 0.350876;
-mean_in[4]= 4.319223;
-mean_in[5]= 2791.484000;
-mean_in[6]= -290.749500;
-mean_in[7]= -129.247100;
-mean_in[8]= 3588.262000;
-mean_in[9]= -2712.177000;
-mean_in[10]= 79.526880;
-mean_in[11]= 1.981132;
-mean_in[12]= 0.699853;
-mean_in[13]= 1.002701;
-mean_in[14]= 3.822350;
+//mean_in[2]= 0.74;
+mean_in[2]= 10.0;
+mean_in[3]= 10.0;
+mean_in[4]= 0.350876;
+mean_in[5]= 4.319223;
+mean_in[6]= 2791.484000;
+mean_in[7]= -290.749500;
+mean_in[8]= -129.247100;
+mean_in[9]= -290.749500;
+mean_in[10]= -129.247100;
+mean_in[11]= 3588.262000;
+mean_in[12]= -2712.177000;
+mean_in[13]= 79.526880;
+mean_in[14]= -2712.177000;
+mean_in[15]= 79.526880;
+//mean_in[11]= 1.981132;
+//mean_in[12]= 0.699853;
+//mean_in[13]= 1.002701;
+//mean_in[14]= 3.822350;
 
 
 /*
@@ -141,19 +155,25 @@ times=0.1;
 
 error_in[0]= 0.001882*times;
 error_in[1]= 0.001025*times;
-error_in[2]= 0.006596*times;
-error_in[3]= 0.005371*times;
-error_in[4]= 0.040218*times;
-error_in[5]= 138.160356*times;
-error_in[6]= 83.901961*times;
-error_in[7]= 19.352462*times;
-error_in[8]= 225.216223*times;
-error_in[9]=  84.118760*times;
-error_in[10]= 6.492040*times;
-error_in[11]= 0.006369*times;
-error_in[12]= 0.206511*times;
-error_in[13]= 0.041540*times;
-error_in[14]= 0.045204*times;
+error_in[2]= 0.001*times;
+error_in[3]= 0.001*times;
+//error_in[2]= 0.006596*times;
+error_in[4]= 0.005371*times;
+error_in[5]= 0.040218*times;
+error_in[6]= 138.160356*times;
+error_in[7]= 83.901961*times;
+error_in[8]= 19.352462*times;
+error_in[9]= 83.901961*times;
+error_in[10]= 19.352462*times;
+error_in[11]= 225.216223*times;
+error_in[12]=  84.118760*times;
+error_in[13]= 6.492040*times;
+error_in[14]=  84.118760*times;
+error_in[15]= 6.492040*times;
+//error_in[11]= 0.006369*times;
+//error_in[12]= 0.206511*times;
+//error_in[13]= 0.041540*times;
+//error_in[14]= 0.045204*times;
 
 /*
 error_in[0]=0.001*times;

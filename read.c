@@ -37,8 +37,8 @@ double k1,k2,k3;
 FILE *f;
 //N=countlines(path)-27;
 N=countlines(path);
-skipheader(f);
 f=fopen(path,"r");
+skipheader(f);
 /*
 fscanf(f,"%*s %*s %*s\n");
 fscanf(f,"%*s %*s %*s\n");

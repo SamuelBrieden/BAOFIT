@@ -23,7 +23,7 @@
 void set_parameters_convergence(double parameters_convergence[])
 {
   double R_convergence=1.005;
-  double steps=5e4;
+  double steps=5e2;
   double chunks=4;
 
   parameters_convergence[0]=R_convergence;
@@ -35,7 +35,7 @@ void set_parameters_convergence(double parameters_convergence[])
 void set_parameters_convergence_parallel(int nthreads, double parameters_convergence[])
 {
   double R_convergence=1.005;
-  double steps=5e4;
+  double steps=5e2;
   double chunks=nthreads;
 
   parameters_convergence[0]=R_convergence;
@@ -46,8 +46,8 @@ void set_parameters_convergence_parallel(int nthreads, double parameters_converg
 
 void set_mcmc_parameters(long int params[])
 {
-long int N_print=8000;//buffer to print in file AND to check for convergence (which will require to read all the writting file)
-long int Nburnin=8000;//number of firsts steps not considered
+long int N_print=100;//buffer to print in file AND to check for convergence (which will require to read all the writting file)
+long int Nburnin=1000;//number of firsts steps not considered
 //long int N_print=1000;//buffer to print in file AND to check for convergence (which will require to read all the writting file)
 //long int Nburnin=0;//1000;//number of firsts steps not considered
 

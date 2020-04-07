@@ -23,7 +23,7 @@
 void set_parameters_convergence(double parameters_convergence[])
 {
   double R_convergence=1.005;
-  double steps=5e2;
+  double steps=5e4;
   double chunks=4;
 
   parameters_convergence[0]=R_convergence;
@@ -35,7 +35,7 @@ void set_parameters_convergence(double parameters_convergence[])
 void set_parameters_convergence_parallel(int nthreads, double parameters_convergence[])
 {
   double R_convergence=1.005;
-  double steps=5e2;
+  double steps=5e4;
   double chunks=nthreads;
 
   parameters_convergence[0]=R_convergence;
@@ -46,8 +46,8 @@ void set_parameters_convergence_parallel(int nthreads, double parameters_converg
 
 void set_mcmc_parameters(long int params[])
 {
-long int N_print=100;//buffer to print in file AND to check for convergence (which will require to read all the writting file)
-long int Nburnin=1000;//number of firsts steps not considered
+long int N_print=10000;//buffer to print in file AND to check for convergence (which will require to read all the writting file)
+long int Nburnin=10000;//number of firsts steps not considered
 //long int N_print=1000;//buffer to print in file AND to check for convergence (which will require to read all the writting file)
 //long int Nburnin=0;//1000;//number of firsts steps not considered
 
@@ -1973,8 +1973,8 @@ Nburnout=(long int)(Nburnout*fraction);
 abs_counter_shared = 0;
 j_run_shared = 0;
 convergence_shared = 0;
-if(trial_mcmc==1){normalize_step=1.9/sqrt(N_Cov_prop*1.);}//fraction of the step wrt the typical rms
-else{normalize_step=1.9/sqrt(1.*N_Cov_prop);}
+if(trial_mcmc==1){normalize_step=2.1/sqrt(N_Cov_prop*1.);}//fraction of the step wrt the typical rms
+else{normalize_step=2.1/sqrt(1.*N_Cov_prop);}
 
 time_ini=time(NULL);
 

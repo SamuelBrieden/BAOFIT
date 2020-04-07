@@ -138,7 +138,7 @@ void set_proposal_error(double error[],int N)
 int i;
 double error_in[1000];
 double times;
-times=0.01;
+times=0.05;
 
 //P0+P2 NGC+SGC fixed sigma
 

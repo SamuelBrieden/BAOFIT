@@ -36,19 +36,12 @@ params_low_in[7]=-20000; params_high_in[7]=20000;//A2NGC-P0
 
 params_low_in[8]=-20000; params_high_in[8]=20000;//A3NGC-P0
 
-params_low_in[9]=-20000; params_high_in[9]=20000;//A4NGC-P0
+params_low_in[9]=-20000; params_high_in[9]=20000;// A1 NGC P2
 
-params_low_in[10]=-20000; params_high_in[10]=20000;//A5NGC-P0
+params_low_in[10]=-20000; params_high_in[10]=20000;//A2 NGC P2
 
-params_low_in[11]=-20000; params_high_in[11]=20000;// A1 NGC P2
+params_low_in[11]=-20000; params_high_in[11]=20000;// A3 NGC P2
 
-params_low_in[12]=-20000; params_high_in[12]=20000;//A2 NGC P2
-
-params_low_in[13]=-20000; params_high_in[13]=20000;// A3 NGC P2
-
-params_low_in[14]=-20000; params_high_in[14]=20000;//A4 NGC P2
-
-params_low_in[15]=-20000; params_high_in[15]=20000;// A5 NGC P2
 
 //params_low_in[11]=0;params_high_in[11]=30;//b1 NGC
 
@@ -104,13 +97,9 @@ mean_in[5]= 4.319223;
 mean_in[6]= 2791.484000;
 mean_in[7]= -290.749500;
 mean_in[8]= -129.247100;
-mean_in[9]= -290.749500;
-mean_in[10]= -129.247100;
-mean_in[11]= 3588.262000;
-mean_in[12]= -2712.177000;
-mean_in[13]= 79.526880;
-mean_in[14]= -2712.177000;
-mean_in[15]= 79.526880;
+mean_in[9]= 3588.262000;
+mean_in[10]= -2712.177000;
+mean_in[11]= 79.526880;
 //mean_in[11]= 1.981132;
 //mean_in[12]= 0.699853;
 //mean_in[13]= 1.002701;
@@ -155,21 +144,17 @@ times=0.1;
 
 error_in[0]= 0.001882*times;
 error_in[1]= 0.001025*times;
-error_in[2]= 0.001*times;
-error_in[3]= 0.001*times;
+error_in[2]= 0.1*times;
+error_in[3]= 0.1*times;
 //error_in[2]= 0.006596*times;
 error_in[4]= 0.005371*times;
 error_in[5]= 0.040218*times;
 error_in[6]= 138.160356*times;
 error_in[7]= 83.901961*times;
 error_in[8]= 19.352462*times;
-error_in[9]= 83.901961*times;
-error_in[10]= 19.352462*times;
-error_in[11]= 225.216223*times;
-error_in[12]=  84.118760*times;
-error_in[13]= 6.492040*times;
-error_in[14]=  84.118760*times;
-error_in[15]= 6.492040*times;
+error_in[9]= 225.216223*times;
+error_in[10]=  84.118760*times;
+error_in[11]= 6.492040*times;
 //error_in[11]= 0.006369*times;
 //error_in[12]= 0.206511*times;
 //error_in[13]= 0.041540*times;

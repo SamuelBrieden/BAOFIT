@@ -40,7 +40,7 @@
 #k-range for B0 computation (double/double): 0.02 0.15
 
 #BAO Polynomial fit
-#Order of polynomial broadband: 5
+#Order of polynomial broadband: 3
 #Sigma variables (effective/para-perp): para-perp
 #Sigma variables independent (yes/no): yes
 #f-factor for Sigma dependence: 0.8204

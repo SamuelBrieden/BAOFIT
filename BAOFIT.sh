@@ -16,4 +16,4 @@ export OMP_NUM_THREADS=8
 
 source compile.sh
 
-./file.out params_mockchallenge_baofit_stage0.c
+./file.out iterate_params_mockchallenge_baofit_stage0.c

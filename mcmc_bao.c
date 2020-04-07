@@ -2887,7 +2887,7 @@ weight=1;
 else
 {//up-weight old
 weight++;
-if(weight>=10000){printf("Warning: Weight values > 50000. abs_count=%ld, chi2=%lf. Exiting now...\n",abs_counter_private,L_current);exit(0);} 
+if(weight>=50000){printf("Warning: Weight values > 50000. abs_count=%ld, chi2=%lf. Exiting now...\n",abs_counter_private,L_current);exit(0);} 
 //if(weight>=N_print){printf("Warning: Weight values > %d (N_print). abs_count=%ld, chi2=%lf. Exiting now...\n",weight,abs_counter_private,L_current);exit(0);}
 }
 

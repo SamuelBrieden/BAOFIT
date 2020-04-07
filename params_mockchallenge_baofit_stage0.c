@@ -13,11 +13,11 @@
 #Number of chunks: 1
 
 #Read input parameters for Power Spectrum
-#Path to data1BAO:   /home/DATA/sbrieden/mockchallenge/baofit_stage0/Pk_multipoles_BAO_fitting_DC.v0.dat
+#Path to data1BAO:   /home/DATA/sbrieden/mockchallenge/baofit_stage0/Pk_multipoles_BAO_fitting_DC_v0.dat
 #Path to data2BAO:   none
 #Path to data1FS: none
 #Path to data2FS: none
-#Path to mocks1BAO/cov1:  /home/DATA/sbrieden/mockchallenge/baofit_stage0/Pk_multipoles_cov_BAO_fitting_DC.v0.cov
+#Path to mocks1BAO/cov1:  /home/DATA/sbrieden/mockchallenge/baofit_stage0/Pk_multipoles_cov_BAO_fitting_DC_v0.cov
 #Path to mocks2BAO/cov2:  none
 #Path to mocks1FS: none
 #Path to mocks2FS: none
@@ -66,7 +66,7 @@
 #For mcmc fit
 #Number of threads: 8
 #Use proposal covariance (yes/no): no
-#Path to proposal covariance: /home/DATA/sbrieden/mockchallenge/baofit_stage0/outdir/mcmc_BAOANISO_BAO_fitting_DC.v0.brieden.txt
+#Path to proposal covariance: /home/DATA/sbrieden/mockchallenge/baofit_stage0/outdir/mcmcBAOANISO_output_BAO_fitting_DC_v0_brieden
 #Maximum number of mcmic accepted steps: 8000
 
 #For BAO anaylytical fit
@@ -87,5 +87,5 @@
 
 #Read out parameters
 #Path to output: /home/DATA/sbrieden/mockchallenge/baofit_stage0/outdir
-#Identifier of output: BAO_fitting_DC.v0.brieden
+#Identifier of output: BAO_fitting_DC_v0_brieden
 #Plot best-fit (yes/no): yes

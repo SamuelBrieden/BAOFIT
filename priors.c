@@ -142,8 +142,8 @@ times=0.1;
 
 //P0+P2 NGC+SGC fixed sigma
 
-error_in[0]= 0.001882*times;
-error_in[1]= 0.001025*times;
+error_in[0]= 0.01882*times;
+error_in[1]= 0.01025*times;
 error_in[2]= 0.1*times;
 error_in[3]= 0.1*times;
 //error_in[2]= 0.006596*times;

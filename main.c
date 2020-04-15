@@ -666,7 +666,7 @@ path_to_mocks1_ending = strrchr(path_to_mocks1_bao, '.'); //this function sets a
 
 if (path_to_mocks1_ending != NULL){
   if ((strcmp(path_to_mocks1_ending, ".cov") == 0)){
-    get_cov_from_file(path_to_mocks1_bao,path_to_mocks1_bis_bao,cov,Ncov,Nrealizations, NeffP0bao,NeffP0rsd, NeffP2bao,NeffP2rsd, NeffP4bao,NeffP4rsd, NeffB0bao,NeffB0rsd,do_power_spectrum, do_bispectrum);
+    get_cov_from_file(path_to_mocks1_bao,path_to_mocks1_bis_bao,cov,Ncov,Nrealizations, NeffP0bao,NeffP0rsd, NeffP2bao,NeffP2rsd, NeffP4bao,NeffP4rsd, NeffB0bao,NeffB0rsd,errP0bao,errP0rsd,errP2bao,errP2rsd,errP4bao,errP4rsd,errB0bao,errB0rsd,do_power_spectrum, do_bispectrum);
   }  
   else {
     sprintf(covfile1,"%s/%s_1.cov",path_output,identifier);
@@ -825,7 +825,7 @@ path_to_mocks2_ending = strrchr(path_to_mocks2_bao, '.'); //this library functio
 // read the covariance from a file, if the extension is ".cov", otherwise "path_to_mocks_ending" is  NULL Pointer and the covariance is read from mocks.
 if (path_to_mocks2_ending != NULL){
   if ((strcmp(path_to_mocks2_ending, ".cov") == 0)){
-    get_cov_from_file(path_to_mocks2_bao,path_to_mocks2_bis_bao,covSGC,Ncov,Nrealizations, NeffP0baoSGC,NeffP0rsdSGC, NeffP2baoSGC,NeffP2rsdSGC, NeffP4baoSGC,NeffP4rsdSGC, NeffB0baoSGC,NeffB0rsdSGC,do_power_spectrum, do_bispectrum);
+    get_cov_from_file(path_to_mocks2_bao,path_to_mocks2_bis_bao,covSGC,Ncov,Nrealizations, NeffP0baoSGC,NeffP0rsdSGC, NeffP2baoSGC,NeffP2rsdSGC, NeffP4baoSGC,NeffP4rsdSGC, NeffB0baoSGC,NeffB0rsdSGC,errP0baoSGC,errP0rsdSGC,errP2baoSGC,errP2rsdSGC,errP4baoSGC,errP4rsdSGC,errB0baoSGC,errB0rsdSGC,do_power_spectrum, do_bispectrum);
   }  
   else {
     sprintf(covfile2,"%s/%s_2.cov",path_output,identifier);

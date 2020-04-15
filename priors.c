@@ -12,13 +12,13 @@ double params_low_in[1000];
 double params_high_in[1000];
 
 ////BAOANISO+P02+NGC+free sigma
-//params_low_in[0]=alpha_min;params_high_in[0]=alpha_max;
+params_low_in[0]=alpha_min;params_high_in[0]=alpha_max;
 
-//params_low_in[1]=alpha_min;params_high_in[1]=alpha_max;
+params_low_in[1]=alpha_min;params_high_in[1]=alpha_max;
 
-params_low_in[0]=0.5;params_high_in[0]=1.5;
+//params_low_in[0]=0.5;params_high_in[0]=1.5;
 
-params_low_in[1]=0.5;params_high_in[1]=1.5;
+//params_low_in[1]=0.5;params_high_in[1]=1.5;
 
 //params_low_in[2]=0;params_high_in[2]=10;
 

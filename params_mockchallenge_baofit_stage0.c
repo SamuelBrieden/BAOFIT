@@ -67,7 +67,7 @@
 #Number of threads: 8
 #Use proposal covariance (yes/no): no
 #Path to proposal covariance: /home/DATA/sbrieden/mockchallenge/baofit_stage0/outdir/mcmcBAOANISO_output_BAO_fitting_DC_v0_brieden
-#Maximum number of mcmic accepted steps: 8000
+#Maximum number of mcmc accepted steps: 8000
 
 #For BAO anaylytical fit
 #Interval for alpha: 0.005

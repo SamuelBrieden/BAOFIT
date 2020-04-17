@@ -340,7 +340,7 @@ gsl_permutation_free(perm);
 for(i=0;i<50;i++)
 {
 errP0bao[i]=sqrt(cov[i+Ncov*i]);
-errP2bao[i+50]=sqrt(cov[i+50+Ncov*(i+50)]);
+errP2bao[i]=sqrt(cov[i+50+Ncov*(i+50)]);
 }
 
 /*

@@ -153,13 +153,13 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
    i0=0;i2=0;i4=0;
    for(i=0;i<N;i++)
    {
-     fscanf(f,"%lf %lf %lf\n",&k,&p0,&p2);
+     fscanf(f,"%lf %lf %lf\n",&k,&p0,&p2);kav=k;
      p4=p2;
    
         if(k>kminP0 && k<kmaxP0)
         {
            k0[i0]=k;
-           kav0[i0]=k;
+           kav0[i0]=kav;
            P0[i0]=p0;
            i0++;
         }
@@ -168,7 +168,7 @@ printf("I22=%lf, Sumw=%lf\n",I22,sumw);
            if(k>kminP2 && k<kmaxP2)
            {
              k2[i2]=k;
-             kav2[i2]=k;
+             kav2[i2]=kav;
              if(baorsd==0){P2[i2]=p0+2./5.*p2;}
              else{P2[i2]=p2;}
              i2++;
